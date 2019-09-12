@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  mi_app:
+    image: aplicacion_simple
+    environment:
+      MONGO_URL: "mongodb://mi_db:27017/test"
+    depends_on:
+      - mi_db
+    ports:
+      - "3000:3000"
+  mi_db:
+    image: mongo
